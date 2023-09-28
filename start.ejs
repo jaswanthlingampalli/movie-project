@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(to right, #a68efd, #257cc3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+    }
+    #bt {
+      height: 45px;
+      padding: 10px;
+      font-weight: bold;
+      width: 400px;
+      border-radius: 30px;
+      border: 1px solid gray;
+      background: linear-gradient(to right, #20ffdc, #00ff80);
+      box-shadow: 0px 0px 8px 2px white;
+      cursor: pointer;
+    }
+    hr {
+      width: 430px;
+      margin-top: -20px;
+    }
+    .child {
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  </style>
+  <body>
+    <h1>Welcome to Movie Info Pool</h1>
+    <hr />
+    <div class="parent">
+      <div class="child">
+        <form action="/signup" class="class1">
+          <input type="submit" value="SignUp" id="bt" />
+        </form>
+        <form action="/signin" class="form2">
+          <input type="submit" value="Login" id="bt" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

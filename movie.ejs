@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie_APP...</title> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+        *{
+            box-sizing: border-box;
+        }
+
+        :root{
+            --color1: #22254b;
+            --color2: #373b69;
+        }
+        body{
+            background-color: var(--color1);
+            font-family: 'Poppins', 'sans-serif';
+            margin: 10;
+            
+        }
+
+        header{
+            padding:1rem; 
+            display:flex;
+            justify-content: flex-end;
+            background-color: var(--color1);
+        }
+
+        .search{
+            background-color: transparent;
+            border: 2px solid var(--color1);
+            padding:0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 1rem;
+            color: white;
+            border-color: red;
+            font-family: inherit;
+        }
+
+        .search:focus{
+            outline:0;
+            background-color: var(--color1);
+        }
+
+        .search::placeholder{
+            color: #7378c5;
+        }
+
+
+        .intro{
+            padding:0.1rem 1rem;
+            display: flex;
+            justify-content: flex-start;
+            color: white;
+        }
+
+        main{
+            background-color: var;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .movie{
+            width: 300px;
+            margin: 1rem;
+            border-radius: 10px;
+            background-color: var(--color2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .movie img{
+            width: 100%;
+        }
+
+        .movie-info{
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem 1rem;
+        }
+
+        .movie-info span{
+            background-color: var(--color1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .overview{
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            background-color: #fff;
+            padding: 1rem;
+            max-height: 100%;
+            transform:translateY(101%);
+            transition:transform 0.3s ease-in;
+        }
+
+        button {
+            background-color: var(--color2);
+            color: white;
+            padding: 20px 0px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 70%;
+            opacity: 0.9;
+        }
+
+        .movie:hover .overview{
+            transform:translateY(0)
+        }
+    </style>
+</head>
+<body>
+    <h2 class="intro">Hey Hello ! ,<br>let's check for the information of the movie u wish for...</h2>
+    <br>
+    <hr>
+    <p style="background-color: var(--color2) ;color: white; text-align:center">. . . . .\\\ Kindly use this Movie APP to Search the information of the movie u are wishing for at here ///. . . . .</p>
+    <header>
+        <div>
+         
+            <form action="movienamesearch" method="GET">
+                <input type="text" placeholder="Search" name="moviename" class="search">
+            </form>
+            
+        </div>
+    </header>
+
+    <main id="main">
+        <% for(var i=0; i<userData.length;i++) { %>
+            <div class="movie">
+                <img src= <%='https://image.tmdb.org/t/p/w500/'+userData[i].poster_path %>  alt="Image">
+
+            <div class="movie-info"> 
+                <h3><%= userData[i].title %></h3>
+                <span class="green"><%= userData[i].vote_average %></span>
+            </div>
+
+            <div class="overview">
+                <p>Relase Date: <%=userData[i].release_date %></p>
+                <p>Overview: <%=userData[i].overview %></p>
+            </div>
+        </div>
+        <% } %>
+    </main> 
+    </body>
+</html>

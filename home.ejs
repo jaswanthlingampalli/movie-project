@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie_APP...</title> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+        }
+
+        :root{
+            --color1: #22254b;
+            --color2: #373b69;
+        }
+        body{
+            background-image: url("https://ik.imagekit.io/gamezhub/International_Showtimes_API_Movie_Guide_Data_Grid_Gr_5Xj72SP.jpg");
+            font-family: 'Poppins', 'sans-serif';
+            margin: 10;
+            
+        }
+        .container{
+            background-color: rgba(0, 0, 0, 0.703);
+        }
+
+        header{
+            padding:1rem; 
+            text-align: center;
+            background-color: var(--primary-color);
+        }
+
+      .intro{
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+
+        .search{
+            background-color: transparent;
+            border: 3px solid var(--color1);
+            padding:0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 1rem;
+            color: white;
+            border-color: rgb(0, 255, 38);
+            font-family: inherit;
+            margin-top: 20px;
+        }
+
+        .search:focus{
+            outline:0;
+            background-color: var(--color1);
+        }
+
+        .search::placeholder{
+            color: #7378c5;
+        }
+
+        main{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .movie{
+            width: 300px;
+            margin: 1rem;
+            border-radius: 10px;
+            background-color: var(--color2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .movie img{
+            width: 100%;
+            height: 80%;
+        }
+
+        .movie-info{
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem 1rem;
+        }
+
+        .movie-info span{
+            background-color: var(--color1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .overview{
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            background-color: #fff;
+            padding: 1rem;
+            max-height: 100%;
+            transform:translateY(101%);
+            transition:transform 0.3s ease-in;
+        }
+
+        button {
+            background-color: var(--color2);
+            color: white;
+            padding: 20px 0px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 70%;
+            opacity: 0.9;
+        }
+
+        .movie:hover .overview{
+            transform:translateY(0)
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="intro">Hey Hello ! ,You have Successfully Logined IN.</h2>
+            <% for(var i=0;i<userData.length;i++) { %>
+               <h3 class="intro">Welcome, <%= userData[i].name %> <br> </h3>
+            <% } %>
+        <hr>
+        <header>
+            <div>
+                <p style="background-color: var(--color2) ;color: white">. . . . .\\\ Search the information of the movie///. . . . .</p>
+                <form action="movienamesearch" method="GET">
+                    <input type="text" placeholder="Search" name="moviename" class="search">
+                </form>
+                
+            </div>
+        </header>
+    
+    
+        <main id="main">
+    
+            
+            <div class="movie">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.xg6XZQvrc-1pZBoEh5sgagHaKl?w=186&h=265&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Image">
+    
+                <div class="movie-info"> 
+                    <h3>RRR</h3>
+                    <span class="green">3.9</span>
+                </div>
+    
+                <div class="overview">
+                    A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join forces and chart out an inspirational path of freedom against the despotic rulers.
+                </div>
+            </div>
+    
+            <div class="movie">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdATcGLKOuT9LOc4sDZqDEPEgBCJUljRIcSjcAAkRaEfrk6MG8NGkIAL26tWyue1oml0o&usqp=CAU" alt="Avatar">
+    
+                <div class="movie-info"> 
+                    <h3>AVATAR</h3>
+                    <span class="green">4.6</span>
+                </div>
+    
+                <div class="overview">
+                    On the lush alien world of Pandora live the Na'vi, beings who appear primitive but are highly evolved. Because the planet's environment is poisonous, human/Na'vi hybrids, called Avatars, must link to human minds to allow for free movement on Pandora. Jake Sully (Sam Worthington), a paralyzed former Marine, becomes mobile again through one such Avatar and falls in love with a Na'vi woman (Zoe Saldana). As a bond with her grows, he is drawn into a battle for the survival of her world.
+                </div>
+            </div>
+    
+            <div class="movie">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@.V1.jpg" alt="Avengers">
+    
+                <div class="movie-info"> 
+                    <h3>AVENGERS</h3>
+                    <span class="green">4.7</span>
+                </div>
+    
+                <div class="overview">
+                    Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe.
+                </div>
+            </div> 
+        </main> 
+    </div>
+    </body>
+</html>

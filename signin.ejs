@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignIn</title>
+    <style>
+      body {
+        height: 100vh;
+        background-image: url("https://ik.imagekit.io/gamezhub/International_Showtimes_API_Movie_Guide_Data_Grid_Gr_5Xj72SP.jpg");
+        margin: 0px;
+      }
+      .container {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .parent {
+        background-color: white;
+        width: 350px;
+        height: 310px;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0px 0px 10px gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h2 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Helvetica,
+          sans-serif;
+        margin-top: 0px;
+        margin-bottom: 10px;
+      }
+      form {
+        height: 250px;
+        width: 260px;
+        display: flex;
+        font-family: "calibri";
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 20px;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 1px 1.5px 5px rgb(160, 160, 160);
+        margin-top: 5px;
+        background-color: rgba(225, 234, 254, 0.824);
+        border: none;
+      }
+      #bt {
+        background-color: #04cb04;
+        color: white;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="parent">
+        <h2>SIGNIN</h2>
+        <form method="post" action="/signinsubmit">
+          <label
+            ><b>Email:</b><br />
+            <input type="email" name="emil" placeholder="Enter email" /><br
+          /></label>
+          <label
+            ><b>Password:</b><br />
+            <input
+              type="password"
+              name="passwrd"
+              placeholder="Enter Password" /><br
+          /></label>
+          <input type="submit" id="bt" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
